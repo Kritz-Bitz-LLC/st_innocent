@@ -31,12 +31,9 @@ function CarouselItem(props: CarouselItemProps) {
   const isHuge = useMediaQuery(theme.breakpoints.up("xl"));
   return (
     <Grid container>
-      <Grid item sm={0} md={1} lg={2} />
+      <Grid size={{ sm: 0, md: 1, lg: 2 }} />
       <Grid
-        item
-        sm={12}
-        md={10}
-        lg={8}
+        size={{ sm: 12, md: 10, lg: 8 }}
         style={{
           display: "flex",
           alignItems: "center",
@@ -105,7 +102,7 @@ function CarouselItem(props: CarouselItemProps) {
           )}
         </Card>
       </Grid>
-      <Grid item sm={0} md={1} lg={2} />
+      <Grid size={{ sm: 0, md: 1, lg: 2 }} />
     </Grid>
   );
 }

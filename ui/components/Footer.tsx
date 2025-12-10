@@ -88,9 +88,7 @@ export default function Footer(props: FooterProps) {
         <Container maxWidth={false}>
           <Grid container spacing={2}>
             <Grid
-              item
-              xs={12}
-              sm={4}
+              size={{ xs: 12, sm: 4 }}
               style={{
                 display: "flex",
                 justifyContent: "center",
@@ -119,7 +117,7 @@ export default function Footer(props: FooterProps) {
                 </Box>
               )}
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid size={{ xs: 12, sm: 4 }}>
               <Box textAlign="center">
                 <Box
                   href="/#"
@@ -145,9 +143,7 @@ export default function Footer(props: FooterProps) {
               </Box>
             </Grid>
             <Grid
-              item
-              xs={12}
-              sm={4}
+              size={{ xs: 12, sm: 4 }}
               style={{
                 display: "flex",
                 justifyContent: "center",

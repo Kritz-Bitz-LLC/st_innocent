@@ -1,5 +1,8 @@
-@import 'react-big-calendar/lib/sass/styles';
-@import 'colors.module';
+@import 'react-big-calendar/lib/css/react-big-calendar.css';
+
+// St. Innocent Theme Colors
+$secondary-main: #e98520;
+$secondary-hover: #c36b13;
 
 .rbc-show-more {
     color: $secondary-main;

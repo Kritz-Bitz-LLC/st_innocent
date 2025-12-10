@@ -73,8 +73,8 @@ export default function WelcomeSection(props: WelcomeSectionProps) {
           marginTop: "0",
         }}
       >
-        <Grid item xs={0} sm={2} />
-        <Grid item xs={12} sm={8}>
+        <Grid size={{ xs: 0, sm: 2 }} />
+        <Grid size={{ xs: 12, sm: 8 }}>
           <Box
             sx={{
               padding: "5%",
@@ -106,13 +106,13 @@ export default function WelcomeSection(props: WelcomeSectionProps) {
             <br />
             <Box sx={{ width: "60%" }}>
               <Grid container spacing={6}>
-                <Grid item sm={12} md={12} lg={6} style={{ width: "100%" }}>
+                <Grid size={{ sm: 12, md: 12, lg: 6 }} style={{ width: "100%" }}>
                   <UpcomingEventBox
                     info="Produce Distribution"
                     date={props.produceDist}
                   />
                 </Grid>
-                <Grid item sm={12} md={12} lg={6} style={{ width: "100%" }}>
+                <Grid size={{ sm: 12, md: 12, lg: 6 }} style={{ width: "100%" }}>
                   <UpcomingEventBox
                     info="Community Meal"
                     date={props.communityMeal}
@@ -138,7 +138,7 @@ export default function WelcomeSection(props: WelcomeSectionProps) {
             </div>
           </Box> */}
         </Grid>
-        <Grid item xs={0} sm={2} />
+        <Grid size={{ xs: 0, sm: 2 }} />
       </Grid>
     </section>
   );

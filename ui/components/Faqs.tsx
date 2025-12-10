@@ -128,8 +128,8 @@ export default function FaqSection(props: FaqSectionProps) {
             marginTop: "0",
           }}
         >
-          <Grid item xs={0} sm={2} />
-          <Grid item xs={12} sm={8}>
+          <Grid size={{ xs: 0, sm: 2 }} />
+          <Grid size={{ xs: 12, sm: 8 }}>
             <Box
               sx={{
                 padding: "5%",
@@ -151,7 +151,7 @@ export default function FaqSection(props: FaqSectionProps) {
                 })}
             </Box>
           </Grid>
-          <Grid item xs={0} sm={2} />
+          <Grid size={{ xs: 0, sm: 2 }} />
         </Grid>
       </Parallax>
     </section>
