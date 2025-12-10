@@ -66,7 +66,7 @@ function HeroLayout(
         }}
       >
         {children}
-        <Background sx={sxBackground} />
+        <Background sx={sxBackground as any} />
       </Container>
     </HeroLayoutRoot>
   );
