@@ -111,9 +111,9 @@ export default function Footer(props: FooterProps) {
                 </Box>
               ) : (
                 <Box>
-                  <Box>Visit | {props.address}</Box>
-                  <Box>Email | {props.email}</Box>
-                  <Box>Call | {props.phone}</Box>
+                  <Box>{props.address}</Box>
+                  {/* <Box>{props.email}</Box>
+                  <Box>{props.phone}</Box> */}
                 </Box>
               )}
             </Grid>
