@@ -1,35 +1,30 @@
-import App, { AppContext, AppInitialProps, AppProps } from "next/app";
-import { NextResponse } from "next/server";
+import { AppProps } from "next/app";
 import {
   createTheme,
   ThemeProvider,
   CssBaseline,
   responsiveFontSizes,
 } from "@mui/material";
-import { Navbar, Footer } from "@/components";
-import { fetchPage } from "@/api";
-import colors from "@/styles/colors.module.scss";
 import "@/styles/calendar.scss";
 import "@/styles/global.scss";
 import "@/styles/fonts.scss";
 
-export default function MyApp({
-  Component,
-  pageProps,
-  // @ts-ignore
-  props,
-}: AppProps) {
+// St. Innocent Theme Colors
+const colors = {
+  primaryMain: "#2a446a",
+  primaryHover: "#385b8f",
+  secondaryMain: "#e98520",
+  secondaryHover: "#c36b13",
+};
+
+export default function MyApp({ Component, pageProps }: AppProps) {
   const theme = createTheme({
     palette: {
       primary: {
         main: colors.primaryMain,
-        // @ts-ignore
-        hover: colors.primaryHover,
       },
       secondary: {
         main: colors.secondaryMain,
-        // @ts-ignore
-        hover: colors.seconaryHover,
       },
     },
     typography: {
