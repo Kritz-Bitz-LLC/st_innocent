@@ -1,106 +1,57 @@
-# St. Innocent
+# Saint Innocent Orthodox Church Website
 
-> PREDATOR: fastaPi React nExtjs mongoDb beAnie pyThOn typescRipt
+Static Next.js website for Saint Innocent Orthodox Church in Olmsted Falls, Ohio.
 
-## Applications 
+## Development
 
-### API
+```bash
+# Install dependencies
+pnpm install
 
-FastAPI application using async libraries with MongoDB, Pushover notifications, and JWT authentication.
+# Run development server
+pnpm dev
+```
 
-### UI
+Visit `http://localhost:3000` to see the site.
 
-Next.js application with incremental static regeneration for top SEO and flexibility.
+## Build & Deploy
 
-### Admin
+### Quick Deploy
 
-Vite application for updating the ui's content, managing inquiries, viewing analytics, and more.
+```bash
+# Build and deploy in one command
+python scripts/deploy.py
+```
 
-## Developent
+This will:
+1. Generate sitemap with current date
+2. Build the static site to `out/`
+3. Rsync to your server at `/var/www/ui/`
 
-* configure environment (.env used by fastapi for config)
-* pipenv install && pipenv shell
-* python run.py --dev (-h, --help for options)
+The script uses the `ST_INNOCENTS_CLOUD` environment variable for the server address, or defaults to `root@saintinnocent.org`.
 
-## Production
+### Manual Build
 
-* pull the newest changes from github and update .env if necessary
-    * install the ui packages with `yarn` (needed for pm2)
-* restart the api
-    * `systemctl restart api`
-* get the ui/admin setup
-    * `yarn build # in admin/ and ui/`
-    * ssh:
-        * `rm -rf /var/www/ui/* && rm -rf /var/www/admin/*`
-    * `scp -r build/* root@$ST_INNOCENTS_CLOUD:/var/www/admin/`
-    * `scp logo.svg root@$ST_INNOCENTS_CLOUD:/var/www/admin/`
-    * `scp -r .next root@$ST_INNOCENTS_CLOUD:/root/Playground/st_innocent/ui/`
-    * ssh:
-        * `cp -r /root/Playground/st_innocent/ui/.next/* /var/www/ui`
-        * `chmod -R 755 /var/www/admin && chmod -R 755 /var/www/ui`
-* restart the ui & nginx
-    * `pm2 restart 0`
-    * `systemctl restart nginx`
-* to start next.js from scratch (from inside ui/)
-    * `yarn && pm2 start yarn --name ui -- run start`
-* to start pm2 on start 
-    * `pm2 save`
-    * `systemctl enable api # to start api service on start`
+```bash
+# Build static site (generates sitemap and exports to out/)
+pnpm build
+```
 
----
+The static site will be generated in the `out/` directory.
 
-## Ubuntu (23.10) Cloud Setup
+### Manual Deploy
 
-- add droplet ip address to network access on mongo db cloud app
+```bash
+# Rsync the out/ directory to your server
+rsync -avz --delete out/ $ST_INNOCENTS_CLOUD:/var/www/ui/
+```
 
-### Packages
+### GitHub Pages (Future)
 
-- `sudo apt install curl git zsh vim tmux nginx certbot python3-certbot-nginx`
-- zsh w/ omz
-    - `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-- pyenv
-    - `sudo apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev openssl`
-    - `curl https://pyenv.run | bash`
-- nvm
-    - `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash`
+The static site in `out/` can be pushed to GitHub Pages or any static hosting service.
 
-### python w/ pyenv
+## Scripts
 
-- install dependencies for ubuntu version
-    - `pyenv update`
-    - `pyenv install <version>`
-    - `pyenv global <version>`
-- pip install --upgrade pip
-- pip install pipenv
-
-#### .venv
-
-- inside `/root/Playground/st_innocent/`
-- python -m venv .venv
-- pipenv install
-- pipenv shell
-
-### Node w/ nvm
-
-- nvm install <version>
-- npm install --global yarn
-
-#### pm2 
-
-- yarn global add pm2
-
-### systemd service
-
-- (make sure venv is built with packages installed)
-- cp api.service /etc/systemd/system/
-- systemctl restart api
-
-### nginx & certbot
-
-> don't do too quick! only 5 chances with certbot before an hour delay
-
-- https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04
-- cp nginx.conf /etc/nginx/sites-enabled/default
-- nginx -t # test it
-- systemctl restart nginx
-- certbot --nginx
+- `scripts/deploy.py` - Builds and deploys the site in one command
+- `scripts/generate-sitemap.js` - Generates sitemap.xml with current date before build
+- `scripts/convert_images.py` - Converts images to WebP format

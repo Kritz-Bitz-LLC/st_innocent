@@ -1,5 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://saintinnocent.org/sitemap.xml
-Sitemap: https://www.saintinnocent.org/sitemap.xml
