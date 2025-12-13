@@ -14,16 +14,16 @@ import { Navbar, Footer } from "@/components";
 // Clergy data
 const CLERGY_DATA = [
   {
-    title: "Archbishop Daniel",
-    role: "Ruling Hierarch",
-    image: "/img/clergy_archbishop_daniel.webp",
-    text: "His Eminence, Archbishop Daniel, is the ruling hierarch of Chicago and the Midwest. He serves as our shepherd and archpastor.",
-  },
-  {
     title: "Father Paisios",
     role: "Rector",
     image: "/img/clergy_father_paisios.webp",
     text: "Before pursuing the priesthood, Fr. Paisios worked in mental health as a music therapist. A convert to Orthodoxy, Fr. Paisios has been serving as rector of St. Innocent since December 2025. He holds an M.Div from St. Tikhon's Orthodox Theological Seminary, where he graduated as valedictorian. He and his wife, Matushka Anna, have been blessed with three children.",
+  },
+  {
+    title: "Archbishop Daniel",
+    role: "Ruling Hierarch",
+    image: "/img/clergy_archbishop_daniel.webp",
+    text: "His Eminence, Archbishop Daniel, is the ruling hierarch of Chicago and the Midwest. He serves as our shepherd and archpastor.",
   },
   {
     title: "Deacon Michael",

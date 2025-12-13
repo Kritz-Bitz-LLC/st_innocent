@@ -7,12 +7,12 @@ const PARISH_LIFE_DATA = {
     {
       title: "Sacraments & Worship",
       image: "/img/parish_life_sacraments_worship.webp",
-      text: "The holy mysteries, such as baptism, confession, and the eucharist utilize material means to convey divine grace, and thus constitute the center of orthodox spiritual life.",
+      text: "The holy mysteries, such as baptism, confession, and the eucharist utilize material means to convey divine grace, and thus constitute the center of Orthodox spiritual life.",
     },
     {
       title: "Youth Education",
       image: "/img/parish_life_youth_education.webp",
-      text: "Our Church School is overflowing with kids who not only learn about Christ, the Gospel, and creation, but also interact, have fun, and build meaningful relationships with peers each week.",
+      text: "Our church school is overflowing with kids who not only learn about Christ, the Gospel, and creation, but also interact, have fun, and build meaningful relationships with peers each week.",
     },
     {
       title: "Adult Education",
