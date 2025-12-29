@@ -15,7 +15,7 @@ import { Navbar, Footer } from "@/components";
 // Ministry data
 const MINISTRIES_DATA = [
   {
-    title: "Singers",
+    title: "Choir",
     image: "/img/ministry_singers.webp",
     text: "Chanting the poetic hymns of the ancient Church is the task of our singers, who help us mingle our worship on earth with the angelic worship in paradise.",
   },
@@ -124,7 +124,7 @@ function MinistrySection({
       {
         threshold: 0.2,
         rootMargin: "0px 0px -50px 0px",
-      }
+      },
     );
 
     if (sectionRef.current) {
@@ -145,8 +145,8 @@ function MinistrySection({
         transform: isVisible
           ? "translateX(0)"
           : isImageLeft
-          ? "translateX(-60px)"
-          : "translateX(60px)",
+            ? "translateX(-60px)"
+            : "translateX(60px)",
         transition: "opacity 0.8s ease-out, transform 0.8s ease-out",
       }}
     >
@@ -179,8 +179,8 @@ function MinistrySection({
         transform: isVisible
           ? "translateX(0) scale(1)"
           : isImageLeft
-          ? "translateX(60px)"
-          : "translateX(-60px)",
+            ? "translateX(60px)"
+            : "translateX(-60px)",
         transition: "opacity 0.8s ease-out 0.2s, transform 0.3s ease-out",
       }}
     >
@@ -221,10 +221,7 @@ function MinistrySection({
           md: isImageLeft ? "row" : "row-reverse",
         },
         minHeight: { xs: "auto", md: "350px" },
-        backgroundColor:
-          index % 2 === 0
-            ? "rgba(0,0,0,0.1)"
-            : "transparent",
+        backgroundColor: index % 2 === 0 ? "rgba(0,0,0,0.1)" : "transparent",
         transition: "background-color 0.3s ease",
         "&:hover": {
           backgroundColor: "rgba(0,0,0,0.2)",
@@ -247,117 +244,115 @@ export default function MinistriesPage() {
     <>
       <Head>
         <title>Ministries & Outreach | Saint Innocent Orthodox Church</title>
-        <meta name="description" content="Explore the ministries and outreach programs at Saint Innocent Orthodox Church. Get involved in worship, fellowship, and community service." />
-        <meta property="og:title" content="Ministries & Outreach | Saint Innocent Orthodox Church" />
-        <meta property="og:description" content="Explore the ministries and outreach programs at Saint Innocent Orthodox Church. Get involved in worship, fellowship, and community service." />
+        <meta
+          name="description"
+          content="Explore the ministries and outreach programs at Saint Innocent Orthodox Church. Get involved in worship, fellowship, and community service."
+        />
+        <meta
+          property="og:title"
+          content="Ministries & Outreach | Saint Innocent Orthodox Church"
+        />
+        <meta
+          property="og:description"
+          content="Explore the ministries and outreach programs at Saint Innocent Orthodox Church. Get involved in worship, fellowship, and community service."
+        />
         <link rel="canonical" href="https://saintinnocent.org/ministries" />
       </Head>
       <Navbar />
       <Box sx={{ overflowX: "hidden" }}>
         {/* Hero Section */}
         <HeroSection>
-        <Container
-          sx={{ position: "relative", zIndex: 1, textAlign: "center", py: 8 }}
+          <Container
+            sx={{ position: "relative", zIndex: 1, textAlign: "center", py: 8 }}
+          >
+            <StaggeredFadeIn delay={100}>
+              <Typography
+                variant="h1"
+                sx={{
+                  color: "#fff",
+                  fontWeight: 500,
+                  textTransform: "uppercase",
+                  letterSpacing: "4px",
+                  fontSize: { xs: "2rem", sm: "3rem", md: "4rem" },
+                  mb: 2,
+                }}
+              >
+                Ministries & Outreach
+              </Typography>
+            </StaggeredFadeIn>
+          </Container>
+        </HeroSection>
+
+        {/* Ministries Sections */}
+        <Box
+          sx={{
+            background: `linear-gradient(135deg, ${theme.palette.secondary.main} 0%, ${theme.palette.info.main} 50%, ${theme.palette.secondary.dark} 100%)`,
+          }}
         >
-          <StaggeredFadeIn delay={100}>
+          {MINISTRIES_DATA.map((ministry, index) => (
+            <MinistrySection
+              key={ministry.title}
+              ministry={ministry}
+              index={index}
+            />
+          ))}
+        </Box>
+
+        {/* Call to Action */}
+        <Box
+          sx={{
+            backgroundColor: theme.palette.primary.main,
+            py: { xs: 6, md: 8 },
+            textAlign: "center",
+          }}
+        >
+          <Container maxWidth="md">
             <Typography
-              variant="h1"
+              variant="h4"
               sx={{
                 color: "#fff",
                 fontWeight: 500,
                 textTransform: "uppercase",
-                letterSpacing: "4px",
-                fontSize: { xs: "2rem", sm: "3rem", md: "4rem" },
+                letterSpacing: "2px",
                 mb: 2,
               }}
             >
-              Ministries & Outreach
+              Get Involved
             </Typography>
-          </StaggeredFadeIn>
-          <StaggeredFadeIn delay={300}>
             <Typography
-              variant="h6"
+              variant="body1"
               sx={{
-                color: "rgba(255,255,255,0.8)",
-                fontWeight: 300,
-                maxWidth: "600px",
-                mx: "auto",
-                lineHeight: 1.6,
+                color: "rgba(255,255,255,0.9)",
+                fontSize: "1.1rem",
+                lineHeight: 1.8,
+                mb: 3,
               }}
             >
-              Serving God and neighbor through worship, fellowship, and outreach
+              Interested in joining one of our ministries? Reach out to learn
+              more about how you can serve and grow in your faith.
             </Typography>
-          </StaggeredFadeIn>
-        </Container>
-      </HeroSection>
-
-      {/* Ministries Sections */}
-      <Box
-        sx={{
-          background: `linear-gradient(135deg, ${theme.palette.secondary.main} 0%, ${theme.palette.info.main} 50%, ${theme.palette.secondary.dark} 100%)`,
-        }}
-      >
-        {MINISTRIES_DATA.map((ministry, index) => (
-          <MinistrySection key={ministry.title} ministry={ministry} index={index} />
-        ))}
-      </Box>
-
-      {/* Call to Action */}
-      <Box
-        sx={{
-          backgroundColor: theme.palette.primary.main,
-          py: { xs: 6, md: 8 },
-          textAlign: "center",
-        }}
-      >
-        <Container maxWidth="md">
-          <Typography
-            variant="h4"
-            sx={{
-              color: "#fff",
-              fontWeight: 500,
-              textTransform: "uppercase",
-              letterSpacing: "2px",
-              mb: 2,
-            }}
-          >
-            Get Involved
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              color: "rgba(255,255,255,0.9)",
-              fontSize: "1.1rem",
-              lineHeight: 1.8,
-              mb: 3,
-            }}
-          >
-            Interested in joining one of our ministries?
-            Reach out to learn more about how you can serve and grow in your faith.
-          </Typography>
-          <Box
-            component="a"
-            href="mailto:priest.paisios@gmail.com"
-            sx={{
-              display: "inline-block",
-              padding: "12px 32px",
-              backgroundColor: theme.palette.secondary.main,
-              color: "#fff",
-              textDecoration: "none",
-              textTransform: "uppercase",
-              letterSpacing: "2px",
-              fontWeight: 500,
-              transition: "background-color 0.3s ease",
-              "&:hover": {
-                backgroundColor: theme.palette.secondary.dark,
-              },
-            }}
-          >
-            Contact Us
-          </Box>
-        </Container>
-      </Box>
-
+            <Box
+              component="a"
+              href="mailto:priest.paisios@gmail.com"
+              sx={{
+                display: "inline-block",
+                padding: "12px 32px",
+                backgroundColor: theme.palette.secondary.main,
+                color: "#fff",
+                textDecoration: "none",
+                textTransform: "uppercase",
+                letterSpacing: "2px",
+                fontWeight: 500,
+                transition: "background-color 0.3s ease",
+                "&:hover": {
+                  backgroundColor: theme.palette.secondary.dark,
+                },
+              }}
+            >
+              Contact Us
+            </Box>
+          </Container>
+        </Box>
       </Box>
       <Footer />
     </>

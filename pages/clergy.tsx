@@ -11,19 +11,13 @@ import {
 } from "@mui/material";
 import { Navbar, Footer } from "@/components";
 
-// Clergy data
-const CLERGY_DATA = [
+// Local clergy data
+const LOCAL_CLERGY_DATA = [
   {
     title: "Father Paisios",
     role: "Rector",
-    image: "/img/clergy_father_paisios.webp",
-    text: "Before pursuing the priesthood, Fr. Paisios worked in mental health as a music therapist. A convert to Orthodoxy, Fr. Paisios has been serving as rector of St. Innocent since December 2025. He holds an M.Div from St. Tikhon's Orthodox Theological Seminary, where he graduated as valedictorian. He and his wife, Matushka Anna, have been blessed with three children.",
-  },
-  {
-    title: "Archbishop Daniel",
-    role: "Ruling Hierarch",
-    image: "/img/clergy_archbishop_daniel.webp",
-    text: "His Eminence, Archbishop Daniel, is the ruling hierarch of Chicago and the Midwest. He serves as our shepherd and archpastor.",
+    image: "/img/clergy_fr_paisios.webp",
+    text: "Before pursuing the priesthood, Fr. Paisios worked in mental health as a music therapist. A convert to Orthodoxy, Fr. Paisios has been serving as rector of St. Innocent since December 2025. He holds an M.Div from St. Tikhon's Orthodox Theological Seminary, graduating as valedictorian. He and his wife, Matushka Anna, have been blessed with three children.",
   },
   {
     title: "Deacon Michael",
@@ -36,6 +30,16 @@ const CLERGY_DATA = [
     role: "Protodeacon",
     image: "/img/clergy_dcn_joseph_carter.webp",
     text: "Protodeacon Joseph Carter has served God's altar for over twenty years, including many years in the Antiochian Archdiocese.",
+  },
+];
+
+// Hierarch data (separate section)
+const HIERARCH_DATA = [
+  {
+    title: "Archbishop Daniel",
+    role: "Ruling Hierarch",
+    image: "/img/clergy_archbishop_daniel.webp",
+    text: "His Eminence, Archbishop Daniel, is the ruling hierarch of Chicago and the Midwest. He serves as our shepherd and archpastor.",
   },
 ];
 
@@ -76,7 +80,7 @@ function ClergyMemberSection({
   member,
   index,
 }: {
-  member: (typeof CLERGY_DATA)[0];
+  member: (typeof LOCAL_CLERGY_DATA)[0];
   index: number;
 }) {
   const theme = useTheme();
@@ -97,7 +101,7 @@ function ClergyMemberSection({
       {
         threshold: 0.2,
         rootMargin: "0px 0px -50px 0px",
-      }
+      },
     );
 
     if (sectionRef.current) {
@@ -118,8 +122,8 @@ function ClergyMemberSection({
         transform: isVisible
           ? "translateX(0)"
           : isImageLeft
-          ? "translateX(-60px)"
-          : "translateX(60px)",
+            ? "translateX(-60px)"
+            : "translateX(60px)",
         transition: "opacity 0.8s ease-out, transform 0.8s ease-out",
       }}
     >
@@ -134,7 +138,7 @@ function ClergyMemberSection({
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          objectPosition: "top center",
+          objectPosition: "center 20%",
         }}
       />
     </Box>
@@ -153,8 +157,8 @@ function ClergyMemberSection({
         transform: isVisible
           ? "translateX(0) scale(1)"
           : isImageLeft
-          ? "translateX(60px)"
-          : "translateX(-60px)",
+            ? "translateX(60px)"
+            : "translateX(-60px)",
         transition: "opacity 0.8s ease-out 0.2s, transform 0.3s ease-out",
       }}
     >
@@ -231,64 +235,110 @@ export default function ClergyPage() {
     <>
       <Head>
         <title>Clergy | Saint Innocent Orthodox Church</title>
-        <meta name="description" content="Meet the clergy of Saint Innocent Orthodox Church, including Fr. Paisios, Archbishop Daniel, and our deacons serving the parish community." />
-        <meta property="og:title" content="Clergy | Saint Innocent Orthodox Church" />
-        <meta property="og:description" content="Meet the clergy of Saint Innocent Orthodox Church, including Fr. Paisios, Archbishop Daniel, and our deacons serving the parish community." />
+        <meta
+          name="description"
+          content="Meet the clergy of Saint Innocent Orthodox Church, including Fr. Paisios, Archbishop Daniel, and our deacons serving the parish community."
+        />
+        <meta
+          property="og:title"
+          content="Clergy | Saint Innocent Orthodox Church"
+        />
+        <meta
+          property="og:description"
+          content="Meet the clergy of Saint Innocent Orthodox Church, including Fr. Paisios, Archbishop Daniel, and our deacons serving the parish community."
+        />
         <link rel="canonical" href="https://saintinnocent.org/clergy" />
       </Head>
       <Navbar />
       <Box sx={{ overflowX: "hidden" }}>
         {/* Hero Section */}
         <HeroSection>
-        <Container
-          sx={{ position: "relative", zIndex: 1, textAlign: "center", py: 8 }}
+          <Container
+            sx={{ position: "relative", zIndex: 1, textAlign: "center", py: 8 }}
+          >
+            <StaggeredFadeIn delay={100}>
+              <Typography
+                variant="h1"
+                sx={{
+                  color: "#fff",
+                  fontWeight: 500,
+                  textTransform: "uppercase",
+                  letterSpacing: "4px",
+                  fontSize: { xs: "2.5rem", sm: "3.5rem", md: "4.5rem" },
+                  mb: 2,
+                }}
+              >
+                Our Clergy
+              </Typography>
+            </StaggeredFadeIn>
+          </Container>
+        </HeroSection>
+
+        {/* Local Clergy Members */}
+        <Box
+          sx={{
+            background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.info.main} 85%, ${theme.palette.primary.dark} 100%)`,
+          }}
         >
-          <StaggeredFadeIn delay={100}>
-            <Typography
-              variant="h1"
+          {LOCAL_CLERGY_DATA.map((member, index) => (
+            <ClergyMemberSection
+              key={member.title}
+              member={member}
+              index={index}
+            />
+          ))}
+
+          {/* Divider for Hierarch Section */}
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              py: 6,
+              px: 4,
+            }}
+          >
+            <Box
               sx={{
-                color: "#fff",
-                fontWeight: 500,
-                textTransform: "uppercase",
-                letterSpacing: "4px",
-                fontSize: { xs: "2.5rem", sm: "3.5rem", md: "4.5rem" },
-                mb: 2,
+                flex: 1,
+                height: "2px",
+                background: "rgba(255,255,255,0.2)",
+                maxWidth: "200px",
               }}
-            >
-              Our Clergy
-            </Typography>
-          </StaggeredFadeIn>
-          <StaggeredFadeIn delay={300}>
+            />
             <Typography
-              variant="h6"
+              variant="h5"
               sx={{
-                color: "rgba(255,255,255,0.8)",
+                color: "rgba(255,255,255,0.7)",
+                px: 4,
                 fontWeight: 300,
-                maxWidth: "600px",
-                mx: "auto",
-                lineHeight: 1.6,
+                letterSpacing: "3px",
+                textTransform: "uppercase",
               }}
             >
-              Serving God's flock at Saint Innocent
+              Diocesan Leadership
             </Typography>
-          </StaggeredFadeIn>
-        </Container>
-      </HeroSection>
+            <Box
+              sx={{
+                flex: 1,
+                height: "2px",
+                background: "rgba(255,255,255,0.2)",
+                maxWidth: "200px",
+              }}
+            />
+          </Box>
 
-      {/* Clergy Members */}
-      <Box
-        sx={{
-          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.info.main} 85%, ${theme.palette.primary.dark} 100%)`,
-        }}
-      >
-        {CLERGY_DATA.map((member, index) => (
-          <ClergyMemberSection key={member.title} member={member} index={index} />
-        ))}
-      </Box>
-
+          {/* Hierarch */}
+          {HIERARCH_DATA.map((member, index) => (
+            <ClergyMemberSection
+              key={member.title}
+              member={member}
+              index={LOCAL_CLERGY_DATA.length + index}
+            />
+          ))}
+        </Box>
       </Box>
       <Footer />
     </>
   );
 }
-

@@ -40,6 +40,7 @@ export default function Navbar() {
     { title: "Clergy", link: "/clergy" },
     { title: "Calendar", link: "/#calendar" },
     { title: "Ministries", link: "/ministries" },
+    { title: "Becoming Orthodox", link: "/becoming_orthodox" },
     { title: "Support", link: NAV_DATA.supportLink },
   ];
 
@@ -94,10 +95,7 @@ export default function Navbar() {
 
   return (
     <nav>
-      <AppBar
-        position="fixed"
-        style={{ backgroundColor: "rgba(70,83,98,.7)" }}
-      >
+      <AppBar position="fixed" style={{ backgroundColor: "rgba(70,83,98,.7)" }}>
         <Toolbar>
           <IconButton
             color="inherit"

@@ -40,7 +40,12 @@ function CarouselItem(props: CarouselItemProps) {
           {!isMobile && props.desktopImageSide === "left" && (
             <CardMedia
               component="img"
-              sx={{ width: 300, height: 300 }}
+              sx={{
+                width: 300,
+                height: 300,
+                objectFit: "cover",
+                objectPosition: "center 20%"
+              }}
               src={props.image}
               alt={props.title}
             />
@@ -90,7 +95,12 @@ function CarouselItem(props: CarouselItemProps) {
           {!isMobile && props.desktopImageSide === "right" && (
             <CardMedia
               component="img"
-              sx={{ width: 300, height: 300 }}
+              sx={{
+                width: 300,
+                height: 300,
+                objectFit: "cover",
+                objectPosition: "center 20%"
+              }}
               src={props.image}
               alt={props.title}
             />

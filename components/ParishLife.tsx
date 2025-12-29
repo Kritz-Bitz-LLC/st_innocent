@@ -5,19 +5,24 @@ import { Carousel } from "@/components";
 const PARISH_LIFE_DATA = {
   items: [
     {
-      title: "Sacraments & Worship",
-      image: "/img/parish_life_sacraments_worship.webp",
-      text: "The holy mysteries, such as baptism, confession, and the eucharist utilize material means to convey divine grace, and thus constitute the center of Orthodox spiritual life.",
+      title: "Sacraments",
+      image: "/img/parish_life_sacraments.webp",
+      text: "The Holy Mysteries, such as Baptism, Confession, and the Eucharist utilize material means to convey divine grace and thus constitute the center of Orthodox spiritual life.",
+    },
+    {
+      title: "Worship",
+      image: "/img/parish_life_worship.webp",
+      text: "Join us and experience the reverent beauty of Ancient Christian worship. Our weekend cycle of services starts with Vespers (evening prayer service) on Saturday night, followed by Matins (morning prayer service) on Sunday at 8:30 and culminating in the Divine Liturgy (Communion service) at 9:30.",
+    },
+    {
+      title: "Adult Education",
+      image: "/img/parish_life_adult_education.webp",
+      text: "Studying the Holy Scriptures and delving into the depths of the Orthodox Christian Faith is a regular part of life at this parish. Fr. Paisios teaches two classes per week, plus the occasional series on various topics.",
     },
     {
       title: "Youth Education",
       image: "/img/parish_life_youth_education.webp",
       text: "Our church school is overflowing with kids who not only learn about Christ, the Gospel, and creation, but also interact, have fun, and build meaningful relationships with peers each week.",
-    },
-    {
-      title: "Adult Education",
-      image: "/img/parish_life_adult_education.webp",
-      text: "Studying the Holy Scriptures and delving into the knowledge of the Orthodox Christian Faith is a regular part of life at this parish. Fr. Paisios teaches two classes per week, plus the occasional series on various topics.",
     },
   ],
 };
@@ -49,7 +54,11 @@ export default function ParishLifeSection() {
             flexDirection: "column",
           }}
         >
-          <Typography variant="h2" component="h3" sx={{ color: "#fff", textTransform: "uppercase" }}>
+          <Typography
+            variant="h2"
+            component="h3"
+            sx={{ color: "#fff", textTransform: "uppercase" }}
+          >
             Parish Life
           </Typography>
         </Box>

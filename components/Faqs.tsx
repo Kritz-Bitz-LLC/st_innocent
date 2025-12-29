@@ -17,7 +17,7 @@ const FAQS_DATA = {
     {
       question: "New to Orthodoxy?",
       answer:
-        "Please know that you are welcome at St. Innocent! If this is your first time at an Orthodox Church, we invite you to \"come and see\" ancient Christian worship at any of our scheduled services (scroll down to see the up-to-date calendar of events). Fr. Paisios would be delighted to meet you and find out what brings you to St. Innocent. On Sundays after Divine Liturgy, you are warmly invited to a fellowship hour with the parish community, followed by a question-and-answer class for newcomers at 12:00 pm with Fr. Paisios.",
+        'Please know that you are welcome at St. Innocent! If this is your first time at an Orthodox Church, we invite you to "come and see" ancient Christian worship at any of our scheduled services (scroll down to see the up-to-date calendar of events). Fr. Paisios would be delighted to meet you and find out what brings you to St. Innocent. On Sundays after Divine Liturgy, you are warmly invited to a fellowship hour with the parish community, followed by a question-and-answer class for newcomers at 12:00 pm with Fr. Paisios.',
     },
     {
       question: "Already Orthodox and looking for a parish home?",
@@ -32,7 +32,7 @@ const FAQS_DATA = {
     {
       question: "Getting here",
       answer:
-        'We are at <a href="https://www.google.com/maps/place/8526+Usher+Rd,+Olmsted+Twp,+OH+44138/@41.3681136,-81.9101245,17z/data=!3m1!4b1!4m6!3m5!1s0x8830945875b0ec95:0x361451cdc5fe1dc1!8m2!3d41.3681136!4d-81.9101245!16s%2Fg%2F11c2cr_c82?entry=ttu">8526 Usher Road, Olmsted Township, Ohio 44138</a>, directly across the street from the Vitamix building! Look for our sign as you come around the curve. </br></br>Our parish is fully handicap accessible, with accessible parking stalls near the north entrance.',
+        'We are at <a href="https://www.google.com/maps/place/8526+Usher+Rd,+Olmsted+Twp,+OH+44138/@41.3681136,-81.9101245,17z/data=!3m1!4b1!4m6!3m5!1s0x8830945875b0ec95:0x361451cdc5fe1dc1!8m2!3d41.3681136!4d-81.9101245!16s%2Fg%2F11c2cr_c82?entry=ttu">8526 Usher Road, Olmsted Township, Ohio 44138</a>, directly across the street from the Vitamix building! Look for our sign as you come around the curve. </br></br>Our parish is fully handicapped accessible, with accessible parking stalls near the north entrance.',
     },
     {
       question: "Are children welcome?",
@@ -40,9 +40,9 @@ const FAQS_DATA = {
         "Absolutely! Here at St. Innocent, we have many children and young families who join us for worship and fellowship. For us, children are a joy and a blessing (even if they make a little noise here and there!) For parents of small children, you'll find changing tables, high chairs, children's books, and most everything you'd need. Should you require anything else, simply ask one of the many other young families you are bound to encounter, they'd love nothing more than to help you out!",
     },
     {
-      question: "Our Parish",
+      question: "Our parish",
       answer:
-        "St. Innocent Orthodox Church is a parish of the Orthodox Church in America (OCA), under the leadership of His Eminence, Archbishop Daniel. We are in full communion with all canonical Orthodox Churches throughout the world, including Russian Orthodox, Greek Orthodox, Antiochian Orthodox, Serbian Orthodox, and many others. Our community began as a small mission in the 1980s and today we are a vibrant, thriving parish, full of both \"cradles\" and converts alike.",
+        'St. Innocent Orthodox Church is a parish of the Orthodox Church in America (OCA), under the leadership of His Eminence, Archbishop Daniel. We are in full communion with all canonical Orthodox Churches throughout the world, including Russian Orthodox, Greek Orthodox, Antiochian Orthodox, Serbian Orthodox, and many others. Our community began as a small mission in the 1980s and today we are a vibrant, thriving parish, full of both "cradles" and converts alike.',
     },
   ],
 };
