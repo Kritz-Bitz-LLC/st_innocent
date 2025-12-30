@@ -12,7 +12,7 @@ const PARISH_LIFE_DATA = {
     {
       title: "Worship",
       image: "/img/parish_life_worship.webp",
-      text: "Join us and experience the reverent beauty of Ancient Christian worship. Our weekend cycle of services starts with Vespers (evening prayer service) on Saturday night, followed by Matins (morning prayer service) on Sunday at 8:30 and culminating in the Divine Liturgy (Communion service) at 9:30.",
+      text: "Join us and experience the reverent beauty of ancient Christian worship. Our weekend cycle of services starts with Vespers (evening prayer service) on Saturday night, followed by Matins (morning prayer service) on Sunday at 8:30 and culminating in the Divine Liturgy (Communion service) at 9:30.",
     },
     {
       title: "Adult Education",

@@ -4,7 +4,7 @@ import { useTheme, Box, Grid, Typography } from "@mui/material";
 const WELCOME_DATA = {
   churchSvg: "/img/welcome_church_icon.svg",
   welcomeText:
-    "We are a community of Christians striving to become \"partakers of the divine nature\" (2 Peter 1:4), day-by-day growing in love for God and neighbor. Join us as we live Ancient Christianity in the modern world!",
+    "We are a community of Christians striving to become \"partakers of the divine nature\" (2 Peter 1:4), day-by-day growing in love for God and neighbor. Join us as we live ancient Christianity in the modern world!",
 };
 
 interface UpcomingEventBoxProps {
