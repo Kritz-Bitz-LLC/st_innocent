@@ -16,4 +16,4 @@ Visit `http://localhost:3000` to see the site.
 
 ## Build & Deploy
 
-Deploys automatically to Cloudflare Pages on push to Github.
+Automatically builds & deploys to Cloudflare Pages when pushed to Github.
