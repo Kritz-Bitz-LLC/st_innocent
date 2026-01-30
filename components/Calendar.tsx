@@ -40,6 +40,12 @@ export interface CalendarEvent {
   allDay: boolean;
 }
 
+// Parse a "YYYY-MM-DD" string as local midnight instead of UTC
+function parseLocalDate(dateStr: string): Date {
+  const [year, month, day] = dateStr.split("-").map(Number);
+  return new Date(year, month - 1, day);
+}
+
 // Fetch events from Google Calendar API
 async function fetchGoogleCalendarEvents(): Promise<CalendarEvent[]> {
   if (!CALENDAR_CONFIG.apiKey) {
@@ -71,12 +77,19 @@ async function fetchGoogleCalendarEvents(): Promise<CalendarEvent[]> {
 
     const data = await response.json();
     
-    return (data.items || []).map((event: any) => ({
-      title: event.summary || "Untitled Event",
-      start: new Date(event.start.dateTime || event.start.date),
-      end: new Date(event.end.dateTime || event.end.date),
-      allDay: !event.start.dateTime,
-    }));
+    return (data.items || []).map((event: any) => {
+      const allDay = !event.start.dateTime;
+      return {
+        title: event.summary || "Untitled Event",
+        start: allDay
+          ? parseLocalDate(event.start.date)
+          : new Date(event.start.dateTime),
+        end: allDay
+          ? parseLocalDate(event.end.date)
+          : new Date(event.end.dateTime),
+        allDay,
+      };
+    });
   } catch (error) {
     console.error("Failed to fetch calendar events:", error);
     return [];
